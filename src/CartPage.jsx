@@ -3,10 +3,9 @@ import { useCart } from './CartContext';
 function CartPage() {
     const { cartItems, totalQuantity, totalAmount, addOrUpdateItem, removeItem } = useCart();
 
-    // Function to handle payment
+    
     const handlePayment = () => {
         alert('Proceeding to payment...');
-        // Add your payment processing logic here
     };
 
     return (
@@ -29,7 +28,7 @@ function CartPage() {
                                 boxSizing: 'border-box' // Account for padding and border in width
                             }}
                         >
-                            {/* Image on the left */}
+                           
                             <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                 <img
                                     src={cartItem.thumbnail}
@@ -42,7 +41,7 @@ function CartPage() {
                                     }}
                                 />
                             </div>
-                            {/* Content (details) on the right */}
+                           
                             <div style={{ flex: 2, paddingLeft: '20px' }}>
                                 <h2 style={{ textAlign: 'left' }}>{cartItem.title}</h2>
                                 <p style={{ textAlign: 'left' }}><strong>Price:</strong> ${cartItem.price.toFixed(2)}</p>
@@ -72,14 +71,14 @@ function CartPage() {
                                         Remove
                                     </button>
                                     </div>
-                                {/* Calculate total cost for this cart item */}
+                                
                                 <p style={{ textAlign: 'left' }}><strong>Total:</strong> ${(cartItem.quantity * cartItem.price).toFixed(2)}</p>
                             </div>
                         </div>
                     ))}
                 </div>
             )}
-            {/* Wrap total quantity and total price in one box */}
+            
             <div
                 style={{
                     display: 'flex',
@@ -96,9 +95,8 @@ function CartPage() {
                     
                 }}
             >
-                {/* Total quantity on the left */}
+            
                 <h3>Total Quantity: {totalQuantity}</h3>
-                {/* Total amount on the right */}
                 <div style={{ textAlign: 'right' }}>
                     <h3>Total Amount: ${totalAmount.toFixed(2)}</h3>
                     {/* Button to proceed to payment below total price */}
